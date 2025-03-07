@@ -1,5 +1,22 @@
 packages:
-    - "docs"
-    - "packages/*"
-    - "client"
-    - "agent"
+  - docs
+  - packages/*
+  - client
+  - agent
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - '@swc/core'
+  - better-sqlite3
+  - bigint-buffer
+  - bufferutil
+  - core-js
+  - core-js-pure
+  - es5-ext
+  - esbuild
+  - keccak
+  - nx
+  - onnxruntime-node
+  - protobufjs
+  - secp256k1
+  - sharp
+  - utf-8-validate
