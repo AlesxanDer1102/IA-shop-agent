@@ -23,6 +23,10 @@ import { defaultCharacter } from "./defaultCharacter.ts";
 
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import JSON5 from "json5";
+import { checkBalanceAction } from "../actions/checkBalance.ts";
+import { transferMNTAction } from "../actions/transfer.ts";
+import { transferERC20Action } from "../actions/transferERC20.ts";
+import { createWalletAction } from "../actions/createWallet.ts";
 
 import fs from "fs";
 import net from "net";
@@ -652,6 +656,12 @@ export async function createAgent(
         character,
         // character.plugins are handled when clients are added
         plugins: [bootstrapPlugin].flat().filter(Boolean),
+        actions: [
+            transferERC20Action,
+            transferMNTAction,
+            checkBalanceAction,
+            createWalletAction,
+        ],
         providers: [],
         managers: [],
         fetch: logFetch,
